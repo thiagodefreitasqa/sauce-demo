@@ -19,6 +19,11 @@ class CartPage {
         cy.visit('https://www.saucedemo.com/v1/cart.html')
         cy.get('.btn_action').click();
     }
+    
+    verifyCartIsEmpty() {
+        cy.get('.cart_item').should('not.exist');
+    }
+    
 }
 
 export default CartPage;

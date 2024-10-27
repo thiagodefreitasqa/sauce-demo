@@ -14,5 +14,12 @@ class LoginPage {
     submit() {
         cy.get('#login-button', { timeout: 5000 }).should('be.enabled').click();
     }
+    
+    enterCredentials(username, password) {
+        this.enterUsername(username);
+        this.enterPassword(password);
+        this.submit();
+    }
+    
 }
 export default LoginPage;
